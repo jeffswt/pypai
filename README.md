@@ -31,3 +31,6 @@ be able to install this with regard to similar approaches.
 You should install also the `pydatagen` package as well (This may not be available
 on PyPI package index).
 
+## Notes
+
+***This project will not be updated any more.***
