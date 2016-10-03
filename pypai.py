@@ -1,16 +1,34 @@
 
+import optparse
 import os
-import sys
 import re
+import sys
 from pydatagen import *
 
-__version = '20160815-dev'
+__version = '20160928-dev'
 
-mycode = sys.argv[1] if len(sys.argv) > 1 else ''
-std = sys.argv[2] if len(sys.argv) > 2 else ''
-gen = sys.argv[3] if len(sys.argv) > 3 else ''
-count = int(sys.argv[4]) if len(sys.argv) > 4 else 1
+opts = optparse.OptionParser(usage='', version=__version)
+opts.add_option('-c', '--code', dest='code', type='string', default='',
+                help='Filename of your code')
+opts.add_option('-s', '--std', dest='std', type='string', default='',
+                help='Filename of the standard code')
+opts.add_option('-g', '--gen', dest='gen', type='string', default='',
+                help='Filename of the generator')
+opts.add_option('-x', '--count', dest='count', type='int', default=1,
+                help='Iterations')
+
+commands, args = opts.parse_args()
+
+
+mycode = commands.code
+std = commands.std
+gen = commands.gen
+count = commands.count
 gpp_invoke = '"C:\\Program Files (x86)\\Dev-Cpp\\MinGW64\\bin\\g++" %s -o %s'
+
+if not mycode or not std or not gen:
+    print('OI code required to run pypai.')
+    exit(1)
 
 def main():
     # Pre-run compilation
