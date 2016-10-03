@@ -17,3 +17,17 @@ Options:
                         Iterations
 ```
 
+## Installation
+
+The following steps are for windows only, Linux <del>and Mac</del> users should
+be able to install this with regard to similar approaches.
+
+1. Copy `pypai.exe`, `pypai.exe.manifest` and `pypai.py` to `$PYTHON3_FOLDER$/Scripts`.
+2. Rename `pypai.py` to `pypai-script.py`.
+3. If `PATH` variable has not been set, add the directory `$PYTHON3_FOLDER$/Scripts`
+   to `PATH` environment variable.
+4. Run `pypai -h` in command prompt, you should receive the help message.
+
+You should install also the `pydatagen` package as well (This may not be available
+on PyPI package index).
+
